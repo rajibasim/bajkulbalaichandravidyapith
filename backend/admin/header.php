@@ -6,7 +6,7 @@ $page = end($page);
 $pagetitle = "";
 $page = explode(".",$page);
 $page = $page[0];
-if($_REQUEST['mode'] == ''){
+if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == ''){
    $_REQUEST['mode'] = '';
 }
 switch($page)

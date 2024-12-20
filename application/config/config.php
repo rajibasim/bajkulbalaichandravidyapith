@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = "https://bajkulbalaichandravidyapith.co.in/";
+$config['base_url'] = "https://localhost/bschool/";
 
 /*
 |--------------------------------------------------------------------------

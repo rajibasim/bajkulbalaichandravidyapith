@@ -15,8 +15,8 @@ if($_SERVER['REMOTE_ADDR']=="::1")
 	define('DB_HOST', 'localhost');
 	define('DB_USERNAME', 'root');
 	define('DB_PASS', '');
-	define('DB_NAME', 'dvm_school');
-	define("BASE_URL", "https://swagatainfotech.in/dmb/backend/");
+	define('DB_NAME', 'swaga21h_dbm');
+	define("BASE_URL", "https://localhost/bschool/backend/");
 	define("DIR_PATH", str_replace("\\","/",$_SERVER['DOCUMENT_ROOT'])."backend/admin/");
 }
 else
