@@ -131,6 +131,24 @@ switch($page)
       $camefrompage = "about.php";
       break;
 
+   case "notice":
+      $group['academic'] = 'active';
+      $activepage[$page] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = "Notice";
+      break;
+
+    case "managenotice":
+      $group['academic'] = 'active';
+      $activepage['notice'] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = ucfirst($_REQUEST['mode'])." Notice";
+      $camefrom = "Notice";
+      $camefrompage = "notice.php";
+      break;
+
    case "hostel":
       $group['hostel'] = 'active';
       $activepage[$page] = 'class="active"';

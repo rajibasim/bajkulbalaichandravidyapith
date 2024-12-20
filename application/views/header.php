@@ -77,9 +77,10 @@
                         <li><a href="<?=base_url();?>" <?=$contrName=='home' ? 'class="active"' : ''; ?>>Home</a></li>
                         <li><a href="<?=base_url();?>about-us" <?=$contrName=='about' ? 'class="active"' : ''; ?>>About Us </a></li>
                         <li><a href="<?=base_url();?>history" <?=$contrName=='history' ? 'class="active"' : ''; ?>>History</a></li>
-                        <li><a href="<?=base_url();?>facuilty" <?=$contrName=='facuilty' ? 'class="active"' : ''; ?>>Facuilty</a></li>
+                        <li><a href="<?=base_url();?>facuilty" <?=$contrName=='facuilty' ? 'class="active"' : ''; ?>>Faculty</a></li>
                         <li><a href="<?=base_url();?>gallery" <?=$contrName=='gallery' ? 'class="active"' : ''; ?>>Gallery</a></li>
-                        <li><a href="<?=base_url();?>notice" <?=$contrName=='notice' ? 'class="active"' : ''; ?>>Notice</a></li>
+                        <li><a href="#">Hostel</a></li>
+                        <li><a href="#">Academic</a></li>
                         <li><a href="<?=base_url();?>contact-us" <?=$contrName=='contact' ? 'class="active"' : ''; ?>>Contact Us</a></li>
                      </ul>
                   </div>
