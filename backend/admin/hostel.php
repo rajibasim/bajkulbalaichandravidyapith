@@ -113,7 +113,7 @@ include("header.php");
 			  
 			  <div class="alert alert-success">
 				<button data-dismiss="alert" class="close"></button>
-				<strong>Success!</strong> notice added
+				<strong>Success!</strong> hostel added
 			  </div>
 			  
 			  <?php
@@ -124,7 +124,7 @@ include("header.php");
 			  
 			  <div class="alert alert-success">
 				<button data-dismiss="alert" class="close"></button>
-				<strong>Success!</strong> notice updated
+				<strong>Success!</strong> hostel updated
 			  </div>
 			  
 			  <?php
@@ -153,14 +153,14 @@ include("header.php");
 							<div class="clearfix">
 								<div class="btn-group">
 									
-									<a class="btn mini green" href="managenotice.php?mode=add">Add New <i class="icon-plus"></i></a>
+									<a class="btn mini green" href="managehostel.php?mode=add">Add New <i class="icon-plus"></i></a>
 									
 								</div>
 								<div class="btn-group pull-right">
 									<button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="icon-angle-down"></i>
 									</button>
 									<ul class="dropdown-menu">
-										<li><a onclick="delselected('data','notice')" style="cursor:pointer">Delete Selected</a></li>
+										<li><a onclick="delselected('data','hostel')" style="cursor:pointer">Delete Selected</a></li>
 									</ul>
 								</div>
 							</div>
@@ -179,26 +179,30 @@ include("header.php");
 								<tbody>
 									
 									<?php
-									$getdest = "SELECT * FROM ".TABLE_PREFIX."data WHERE type = 'notice' ORDER BY id DESC";
+									$getdest = "SELECT * FROM ".TABLE_PREFIX."data WHERE type = 'hostel' ORDER BY id DESC";
 									$getdest = mysqli_query($conn,$getdest) or die (mysqli_error($conn));
 									while($rowdest = mysqli_fetch_array($getdest))
 									{
+										// Get pic
+										if($rowdest['image'] == "")
+										{
+											$pic = "images/nopic.jpg";
+										}
+										else
+										{
+											$pic = BASE_URL.'data_image/'.$rowdest['image'];
+										}
 									?>
 									
 									<tr class="odd gradeX">
 										<td><input type="checkbox" class="checkboxes" value="<?=$rowdest['id']?>" name="data[]"/></td>
 										<td class="hidden-480">
 										
-											<?php
-											// Get pic
-											if($rowdest['image'] == ""){
-											  echo "No File";
-											}else{
-											?>
-												<a target="_blank" href="<?=BASE_URL.'data_image/'.$rowdest['image']?>">View File</a>
-											<?php
-											}
-											?>
+											<div class="tile image double selected">
+												<div class="tile-body">
+													<img src="<?=$pic?>" alt="">
+												</div>
+											</div>
 										
 										</td>
 										
@@ -215,8 +219,8 @@ include("header.php");
 										  </div>
 										
 										</td>
-										<td class="hidden-480"><a class="btn mini green" data-toggle="modal" href="managenotice.php?data_id=<?=$rowdest['id']?>&mode=edit"><i class="icon-edit"></i> Edit</a></td>
-										<td ><a class="btn mini red" href="#" onclick="deleteone(<?=$rowdest['id']?>,'data','notice')"><i class="icon-trash"></i> Delete</a></td>
+										<td class="hidden-480"><a class="btn mini green" data-toggle="modal" href="managehostel.php?data_id=<?=$rowdest['id']?>&mode=edit"><i class="icon-edit"></i> Edit</a></td>
+										<td ><a class="btn mini red" href="#" onclick="deleteone(<?=$rowdest['id']?>,'data','hostel')"><i class="icon-trash"></i> Delete</a></td>
 									</tr>
 									
 									<?php
@@ -276,8 +280,6 @@ include("header.php");
 			$.post('ajax/delete.php',{ id : id, mode : 'single', type : 'data', table : table, datatype : datatype },
 				function(data)
 				{
-					location.reload();
-					return false;
 					$('#tablesec').html(data);
 					
 					/************************************ Table JS ************************************/
@@ -357,8 +359,6 @@ include("header.php");
 				$.post('ajax/delete.php',{ ids : str , mode : 'selected', type : 'data', table : table, datatype : datatype },
 					function(data)
 					{
-						location.reload();
-						return false;
 						$('#tablesec').html(data);
 						
 						/************************************ Table JS ************************************/

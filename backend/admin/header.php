@@ -118,7 +118,7 @@ switch($page)
       $activepage[$page] = 'class="active"';
       $selected['about'] = 'selected';
       $arrowopen['about'] = 'open';
-      $pagetitle = "about";
+      $pagetitle = "About";
       break;
 
    case "manageabout":
@@ -126,11 +126,28 @@ switch($page)
       $activepage['about'] = 'class="active"';
       $selected['about'] = 'selected';
       $arrowopen['about'] = 'open';
-      $pagetitle = ucfirst($_REQUEST['mode'])." about";
-      $camefrom = "about";
+      $pagetitle = ucfirst($_REQUEST['mode'])." About";
+      $camefrom = "About";
       $camefrompage = "about.php";
       break;
 
+   case "hostel":
+      $group['hostel'] = 'active';
+      $activepage[$page] = 'class="active"';
+      $selected['hostel'] = 'selected';
+      $arrowopen['hostel'] = 'open';
+      $pagetitle = "Hostel";
+      break;
+
+   case "managehostel":
+      $group['hostel'] = 'active';
+      $activepage['hostel'] = 'class="active"';
+      $selected['hostel'] = 'selected';
+      $arrowopen['hostel'] = 'open';
+      $pagetitle = ucfirst($_REQUEST['mode'])." Hostel";
+      $camefrom = "Hostel";
+      $camefrompage = "hostel.php";
+      break;
 
 	case "testimonial":
 		$group['testimonial'] = 'active';
@@ -204,23 +221,96 @@ switch($page)
       $camefrompage = "facuilty.php";
       break;
 
-    case "notice":
-      $group['notice'] = 'active';
+   case "result":
+      $group['academic'] = 'active';
       $activepage[$page] = 'class="active"';
-      $selected['notice'] = 'selected';
-      $arrowopen['notice'] = 'open';
-      $pagetitle = "Notice";
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = "Result";
       break;
 
-    case "managenotice":
-      $group['notice'] = 'active';
-      $activepage['notice'] = 'class="active"';
-      $selected['notice'] = 'selected';
-      $arrowopen['notice'] = 'open';
-      $pagetitle = ucfirst($_REQUEST['mode'])." Notice";
-      $camefrom = "Notice";
-      $camefrompage = "notice.php";
+   case "manageresult":
+      $group['academic'] = 'active';
+      $activepage['result'] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = ucfirst($_REQUEST['mode'])." Result";
+      $camefrom = "Result";
+      $camefrompage = "result.php";
       break;
+
+   case "rutine":
+      $group['academic'] = 'active';
+      $activepage[$page] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = "Class Rutine";
+      break;
+
+   case "managerutine":
+      $group['academic'] = 'active';
+      $activepage['rutine'] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = ucfirst($_REQUEST['mode'])." Class Rutine";
+      $camefrom = "Class Rutine";
+      $camefrompage = "rutine.php";
+      break;
+
+   case "exam":
+      $group['academic'] = 'active';
+      $activepage[$page] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = "Exam Rutine";
+      break;
+
+   case "manageexam":
+      $group['academic'] = 'active';
+      $activepage['exam'] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = ucfirst($_REQUEST['mode'])." Exam Rutine";
+      $camefrom = "Exam Rutine";
+      $camefrompage = "exam.php";
+      break;
+
+   case "paper":
+      $group['academic'] = 'active';
+      $activepage[$page] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = "Question Paper";
+      break;
+
+   case "managepaper":
+      $group['academic'] = 'active';
+      $activepage['paper'] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = ucfirst($_REQUEST['mode'])." Question Paper";
+      $camefrom = "Question Paper";
+      $camefrompage = "paper.php";
+      break;
+
+   case "calender":
+      $group['academic'] = 'active';
+      $activepage[$page] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = "Calender";
+      break;
+
+   case "managecalender":
+      $group['academic'] = 'active';
+      $activepage['calender'] = 'class="active"';
+      $selected['academic'] = 'selected';
+      $arrowopen['academic'] = 'open';
+      $pagetitle = ucfirst($_REQUEST['mode'])." Calender";
+      $camefrom = "Calender";
+      $camefrompage = "calender.php";
+      break;
+
 
 	case "default":
 		$activepage[$page] = '';

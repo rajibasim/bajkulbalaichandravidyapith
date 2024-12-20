@@ -90,7 +90,7 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'add')
 		mysqli_query($conn,$slugupdate) or die(mysqli_error($conn));
 	}
 
-	header("location:notice.php?action=added");
+	header("location:rutine.php?action=added");
 }
 
 // Edit
@@ -169,7 +169,7 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit')
 		mysqli_query($conn,$slugupdate) or die(mysqli_error($conn));
 	}
 	
-	header("location:notice.php?action=updated");
+	header("location:rutine.php?action=updated");
 }
 ?>
 
@@ -264,7 +264,7 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit')
 
 							<input type="hidden" name="action" value="<?=$_REQUEST['mode']?>">
 							<input type="hidden" name="id" value="<?=$id?>">
-							<input type="hidden" name="type" value="notice">
+							<input type="hidden" name="type" value="rutine">
 							
 						   <div class="control-group">
 							  <label class="control-label">File</label>				  
@@ -281,9 +281,9 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit')
 						   </div>
 
 						   <div class="control-group">
-							  <label class="control-label">Date</label>				  
+							  <label class="control-label">Class</label>				  
 							  <div class="controls">
-								 <input type="text" placeholder="mm/dd/yyyy" class="span6 m-wrap" name="date" id="date" value="<?=isset($getdata['date']) && $getdata['date'] ? stripslashes($getdata['date']) : "";?>" />
+								 <input type="text" placeholder="Class" class="span6 m-wrap" name="class" id="class" value="<?=isset($fetchdata->class) && $fetchdata->class ? stripslashes($fetchdata->class) : "";?>" />
 							  </div>
 						   </div>
 						  

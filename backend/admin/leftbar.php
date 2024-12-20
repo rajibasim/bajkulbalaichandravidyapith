@@ -47,7 +47,7 @@
             <li <?=isset($activepage['banner']) && $activepage['banner'] ? $activepage['banner']:"";?>><a href="banner.php">Manage Banner</a></li>
          </ul>
       </li>
-      <li class="has-sub <?=isset($group['headerbanner']) && $group['headerbanner'] ? $group['headerbanner'] : "";?>">
+      <!-- <li class="has-sub <?=isset($group['headerbanner']) && $group['headerbanner'] ? $group['headerbanner'] : "";?>">
          <a href="javascript:;">
          <i class="icon-bookmark-empty"></i> 
          <span class="title">Header Banner</span>
@@ -56,7 +56,7 @@
          </a>
          <ul class="sub">
             <li <?=isset($activepage['headerbanner']) && $activepage['headerbanner'] ? $activepage['headerbanner']:"";?>><a href="headerbanner.php">Manage Header Banner</a></li>
-         </ul>
+         </ul> -->
       </li>
       <li class="has-sub <?=isset($group['category']) && $group['category'] ? $group['category'] : "";?>">
          <a href="javascript:;">
@@ -114,15 +114,31 @@
             <li <?=isset($activepage['facuilty']) && $activepage['facuilty'] ? $activepage['facuilty']:"";?>><a href="facuilty.php">Manage Facuilty</a></li>
          </ul>
       </li>
-      <li class="has-sub <?=isset($group['notice']) && $group['notice'] ? $group['notice'] : "";?>">
+      <li class="has-sub <?=isset($group['hostel']) && $group['hostel'] ? $group['hostel'] : "";?>">
          <a href="javascript:;">
          <i class="icon-bookmark-empty"></i> 
-         <span class="title">Notice</span>
-         <span class="<?=isset($selected['notice']) && $selected['notice'] ? $selected['notice'] : "";?>"></span>
-         <span class="arrow <?=isset($arrowopen['notice']) && $arrowopen['notice'] ? $arrowopen['notice'] : "";?>"></span>
+         <span class="title">Hostel</span>
+         <span class="<?=isset($selected['hostel']) && $selected['hostel'] ? $selected['hostel'] : "";?>"></span>
+         <span class="arrow <?=isset($arrowopen['hostel']) && $arrowopen['hostel'] ? $arrowopen['hostel'] : "";?>"></span>
          </a>
          <ul class="sub">
-            <li <?=isset($activepage['notice']) && $activepage['notice'] ? $activepage['notice']:"";?>><a href="notice.php">Manage Notice</a></li>
+            <li <?=isset($activepage['hostel']) && $activepage['hostel'] ? $activepage['hostel']:"";?>><a href="hostel.php">Manage Hostel</a></li>
+         </ul>
+      </li>
+      <li class="has-sub <?=isset($group['academic']) && $group['academic'] ? $group['academic'] : "";?>">
+         <a href="javascript:;">
+         <i class="icon-bookmark-empty"></i> 
+         <span class="title">Academic</span>
+         <span class="<?=isset($selected['academic']) && $selected['academic'] ? $selected['academic'] : "";?>"></span>
+         <span class="arrow <?=isset($arrowopen['academic']) && $arrowopen['academic'] ? $arrowopen['academic'] : "";?>"></span>
+         </a>
+         <ul class="sub">
+            <li <?=isset($activepage['notice']) && $activepage['notice'] ? $activepage['notice']:"";?>><a href="notice.php">Notice</a></li>
+            <li <?=isset($activepage['result']) && $activepage['result'] ? $activepage['result']:"";?>><a href="result.php">Result</a></li>
+            <li <?=isset($activepage['rutine']) && $activepage['rutine'] ? $activepage['rutine']:"";?>><a href="rutine.php">Class Rutine</a></li>
+            <li <?=isset($activepage['exam']) && $activepage['exam'] ? $activepage['exam']:"";?>><a href="exam.php">Exam Rutine</a></li>
+            <li <?=isset($activepage['paper']) && $activepage['paper'] ? $activepage['paper']:"";?>><a href="paper.php">Question Paper</a></li>
+            <li <?=isset($activepage['calender']) && $activepage['calender'] ? $activepage['calender']:"";?>><a href="calender.php">Calender</a></li>
          </ul>
       </li>
       <li class="has-sub <?=isset($group['tools']) && $group['tools'] ? $group['tools'] : "";?>">

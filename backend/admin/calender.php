@@ -113,7 +113,7 @@ include("header.php");
 			  
 			  <div class="alert alert-success">
 				<button data-dismiss="alert" class="close"></button>
-				<strong>Success!</strong> notice added
+				<strong>Success!</strong> calender added
 			  </div>
 			  
 			  <?php
@@ -124,7 +124,7 @@ include("header.php");
 			  
 			  <div class="alert alert-success">
 				<button data-dismiss="alert" class="close"></button>
-				<strong>Success!</strong> notice updated
+				<strong>Success!</strong> calender updated
 			  </div>
 			  
 			  <?php
@@ -153,14 +153,14 @@ include("header.php");
 							<div class="clearfix">
 								<div class="btn-group">
 									
-									<a class="btn mini green" href="managenotice.php?mode=add">Add New <i class="icon-plus"></i></a>
+									<a class="btn mini green" href="managecalender.php?mode=add">Add New <i class="icon-plus"></i></a>
 									
 								</div>
 								<div class="btn-group pull-right">
 									<button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="icon-angle-down"></i>
 									</button>
 									<ul class="dropdown-menu">
-										<li><a onclick="delselected('data','notice')" style="cursor:pointer">Delete Selected</a></li>
+										<li><a onclick="delselected('data','calender')" style="cursor:pointer">Delete Selected</a></li>
 									</ul>
 								</div>
 							</div>
@@ -169,8 +169,8 @@ include("header.php");
 								<thead>
 									<tr>
 										<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
-										<th class="hidden-480">Image</th>
-										<th class="hidden-480">Name</th>
+										<th class="hidden-480">File</th>
+										<th class="hidden-480">Title</th>
 										<th class="hidden-480">Status</th>
 										<th class="hidden-480">Edit</th>
 										<th class="hidden-480">Delete</th>
@@ -179,7 +179,7 @@ include("header.php");
 								<tbody>
 									
 									<?php
-									$getdest = "SELECT * FROM ".TABLE_PREFIX."data WHERE type = 'notice' ORDER BY id DESC";
+									$getdest = "SELECT * FROM ".TABLE_PREFIX."data WHERE type = 'calender' ORDER BY id DESC";
 									$getdest = mysqli_query($conn,$getdest) or die (mysqli_error($conn));
 									while($rowdest = mysqli_fetch_array($getdest))
 									{
@@ -215,8 +215,8 @@ include("header.php");
 										  </div>
 										
 										</td>
-										<td class="hidden-480"><a class="btn mini green" data-toggle="modal" href="managenotice.php?data_id=<?=$rowdest['id']?>&mode=edit"><i class="icon-edit"></i> Edit</a></td>
-										<td ><a class="btn mini red" href="#" onclick="deleteone(<?=$rowdest['id']?>,'data','notice')"><i class="icon-trash"></i> Delete</a></td>
+										<td class="hidden-480"><a class="btn mini green" data-toggle="modal" href="managecalender.php?data_id=<?=$rowdest['id']?>&mode=edit"><i class="icon-edit"></i> Edit</a></td>
+										<td ><a class="btn mini red" href="#" onclick="deleteone(<?=$rowdest['id']?>,'data','calender')"><i class="icon-trash"></i> Delete</a></td>
 									</tr>
 									
 									<?php

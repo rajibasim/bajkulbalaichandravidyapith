@@ -90,7 +90,7 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'add')
 		mysqli_query($conn,$slugupdate) or die(mysqli_error($conn));
 	}
 
-	header("location:notice.php?action=added");
+	header("location:hostel.php?action=added");
 }
 
 // Edit
@@ -169,7 +169,7 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit')
 		mysqli_query($conn,$slugupdate) or die(mysqli_error($conn));
 	}
 	
-	header("location:notice.php?action=updated");
+	header("location:hostel.php?action=updated");
 }
 ?>
 
@@ -264,12 +264,23 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit')
 
 							<input type="hidden" name="action" value="<?=$_REQUEST['mode']?>">
 							<input type="hidden" name="id" value="<?=$id?>">
-							<input type="hidden" name="type" value="notice">
+							<input type="hidden" name="type" value="hostel">
 							
 						   <div class="control-group">
-							  <label class="control-label">File</label>				  
+							  <label class="control-label">Image.</label>				  
 							  <div class="controls">
-								 <input type="file" class="default" name="data_image" id="data_image"/></span>
+								 <div class="fileupload fileupload-new" data-provides="fileupload">
+									<div class="fileupload-new thumbnail">
+									   <img src="<?=$pic?>" alt="" style="width:200px"/>
+									</div>
+									<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+									<div>
+									   <span class="btn btn-file"><span class="fileupload-new">Select image</span>
+									   <span class="fileupload-exists">Change</span>
+									   <input type="file" class="default" name="data_image" id="data_image"/></span>
+									   <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+									</div>
+								 </div>
 							  </div>
 						    </div>
 
@@ -279,15 +290,8 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'edit')
 								 <input type="text" class="span6 m-wrap" name="name" id="name" value="<?=isset($getdata['name']) && $getdata['name'] ? stripslashes($getdata['name']) : "";?>" />
 							  </div>
 						   </div>
-
-						   <div class="control-group">
-							  <label class="control-label">Date</label>				  
-							  <div class="controls">
-								 <input type="text" placeholder="mm/dd/yyyy" class="span6 m-wrap" name="date" id="date" value="<?=isset($getdata['date']) && $getdata['date'] ? stripslashes($getdata['date']) : "";?>" />
-							  </div>
-						   </div>
 						  
-	                            <div class="control-group" style="display: none;">
+	                            <div class="control-group">
 								  <label class="control-label">Description</label>				  
 								  <div class="controls">
 									<textarea class="span12 ckeditor m-wrap" name="description" rows="6" id="description"><?=isset($fetchdata->description) && $fetchdata->description ? stripslashes($fetchdata->description) : "";?></textarea>
