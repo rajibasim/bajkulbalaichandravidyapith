@@ -14,8 +14,8 @@ include 'header.php';
    </div>
 </section>
 <?php
-if(isset($about) && $about){
-    foreach ($about as $key => $value) {
+if(isset($hostel) && $hostel){
+    foreach ($hostel as $key => $value) {
         $desc = json_decode($value['json_data']);
         if(($key+1) % 2 == 0){
         ?>

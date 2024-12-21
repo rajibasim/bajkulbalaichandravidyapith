@@ -12,8 +12,8 @@ class Contact extends CI_Controller {
 	public function index(){
 		$data['title'] = "Contact Us";
 		$data['about'] = $this->Common_model->select('dmb_data',array('status' => 'Yes','type' => 'about'),'','','','','id','DESC');
-		$page_data = $this->Common_model->select('dmb_data',array('status' => 'Yes', 'id' => '96', 'type' => 'headerbanner'),'','','','','id','DESC');
-		$data['page_data'] = $page_data[0];
+		//$page_data = $this->Common_model->select('dmb_data',array('status' => 'Yes', 'id' => '96', 'type' => 'headerbanner'),'','','','','id','DESC');
+		//$data['page_data'] = $page_data[0];
 		$this->load->view('contact',$data);
 	}
 	

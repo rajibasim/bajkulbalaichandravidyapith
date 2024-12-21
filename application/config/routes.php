@@ -54,6 +54,7 @@ $route['home'] = 'home/index';
 
 $route['projects/(:any)'] = 'projects/details/$1';
 $route['about-us'] = 'about/index';
+$route['hostel'] = 'hostel/index';
 $route['contact-us'] = 'contact/index';
 $route['service/(:any)'] = 'service/index/$1';
 $route['event/(:any)'] = 'event/index/$1';

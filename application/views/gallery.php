@@ -1,21 +1,16 @@
 <?php 
 include 'header.php';
 ?>
-<section class="sec-quotes sec-facilities-quotes">
-    <div class="overlay-innerBanner"></div>
-    <div class="container">
-        <div class="bx-cotedContent">
-            <div class="bx-Quotes">
-                <p><span>"</span> 
-                   <?php
-                      $desc = json_decode($page_data['json_data']);
-                      echo strip_tags($desc->description);
-                   ?>
-                <span>"</span></p>
-                <h6><?=$page_data['name'];?></h6>
-            </div>
-        </div>
-    </div>
+<section class="sec-quotes sec-PNTB">
+   <div class="overlay-innerBanner"></div>
+   <div class="container">
+      <div class="bx-cotedContent">
+         <div class="bx-Quotes">
+               <div class="pagename"> <?php echo $title; ?></div>
+               <div class="breadcrump"><span><a href="<?=base_url()?>">Home</a></span><span>/</span><span> <?php echo $title; ?></span></div>
+         </div>
+      </div>
+   </div>
 </section>
 <section class="sec-ourteacher sec-ourGallery">
    <div class="container">

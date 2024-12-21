@@ -113,7 +113,7 @@ include("header.php");
 			  
 			  <div class="alert alert-success">
 				<button data-dismiss="alert" class="close"></button>
-				<strong>Success!</strong> rutine added
+				<strong>Success!</strong> result added
 			  </div>
 			  
 			  <?php
@@ -124,7 +124,7 @@ include("header.php");
 			  
 			  <div class="alert alert-success">
 				<button data-dismiss="alert" class="close"></button>
-				<strong>Success!</strong> rutine updated
+				<strong>Success!</strong> result updated
 			  </div>
 			  
 			  <?php
@@ -153,14 +153,14 @@ include("header.php");
 							<div class="clearfix">
 								<div class="btn-group">
 									
-									<a class="btn mini green" href="managerutine.php?mode=add">Add New <i class="icon-plus"></i></a>
+									<a class="btn mini green" href="manageresult.php?mode=add">Add New <i class="icon-plus"></i></a>
 									
 								</div>
 								<div class="btn-group pull-right">
 									<button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="icon-angle-down"></i>
 									</button>
 									<ul class="dropdown-menu">
-										<li><a onclick="delselected('data','rutine')" style="cursor:pointer">Delete Selected</a></li>
+										<li><a onclick="delselected('data','result')" style="cursor:pointer">Delete Selected</a></li>
 									</ul>
 								</div>
 							</div>
@@ -179,7 +179,7 @@ include("header.php");
 								<tbody>
 									
 									<?php
-									$getdest = "SELECT * FROM ".TABLE_PREFIX."data WHERE type = 'rutine' ORDER BY id DESC";
+									$getdest = "SELECT * FROM ".TABLE_PREFIX."data WHERE type = 'result' ORDER BY id DESC";
 									$getdest = mysqli_query($conn,$getdest) or die (mysqli_error($conn));
 									while($rowdest = mysqli_fetch_array($getdest))
 									{
@@ -215,8 +215,8 @@ include("header.php");
 										  </div>
 										
 										</td>
-										<td class="hidden-480"><a class="btn mini green" data-toggle="modal" href="managerutine.php?data_id=<?=$rowdest['id']?>&mode=edit"><i class="icon-edit"></i> Edit</a></td>
-										<td ><a class="btn mini red" href="#" onclick="deleteone(<?=$rowdest['id']?>,'data','rutine')"><i class="icon-trash"></i> Delete</a></td>
+										<td class="hidden-480"><a class="btn mini green" data-toggle="modal" href="manageresult.php?data_id=<?=$rowdest['id']?>&mode=edit"><i class="icon-edit"></i> Edit</a></td>
+										<td ><a class="btn mini red" href="#" onclick="deleteone(<?=$rowdest['id']?>,'data','result')"><i class="icon-trash"></i> Delete</a></td>
 									</tr>
 									
 									<?php
